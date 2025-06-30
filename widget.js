@@ -131,15 +131,6 @@ function createWidget(imageUrl, path) {
       hasMoved = false;
     }
   }
-
-  function resizeWidget() {
-    const newSize = window.innerWidth < 600 ? "125px" : "200px";
-    link.style.width = newSize;
-    link.style.height = newSize;
-  }
-
-  // Handle window resize to adjust widget size
-  window.addEventListener("resize", resizeWidget);
 }
 
 // Auto-execute when script loads, reading attributes from script tag
