@@ -2,7 +2,7 @@
 function createWidget(imageUrl, path) {
   // === CONFIG ===
   const baseUrl = "https://patient.patientpartner.com";
-  const linkUrl = `${baseUrl}${path}`;
+  const linkUrl = path && path.trim() ? `${baseUrl}${path}` : baseUrl;
   const imgSrc =
     imageUrl ||
     "https://patientpartner-images2.s3.us-west-1.amazonaws.com/website/widget/widget.png";

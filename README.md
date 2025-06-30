@@ -16,6 +16,9 @@ Easily embed the Patient Partner widget on your site by including the following 
 Add this snippet just before the closing `</body>` tag on your website:
 
 ```html
-<script src="https://github.com/rightdevice-inc/widget.js" imageUrl="$IMAGE_URL"
-path="$PATH" /script>
+<script
+  src="https://raw.githubusercontent.com/rightdevice-inc/widget/master/widget.js"
+  imageUrl="$IMAGE_URL"
+  path="$PATH"
+></script>
 ```
