@@ -7,31 +7,6 @@ function createWidget(imageUrl, path) {
     imageUrl ||
     "https://patientpartner-images2.s3.us-west-1.amazonaws.com/website/widget/widget.png";
 
-  // === RESPONSIVE SIZING ===
-  // More reliable mobile detection that works with device simulators
-  // const isMobile = () => {
-  //   // Check user agent for mobile devices
-  //   const userAgent = navigator.userAgent.toLowerCase();
-  //   const isMobileUA =
-  //     /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
-  //       userAgent
-  //     );
-
-  //   // Check if viewport is set for mobile (common in responsive sites)
-  //   const viewport = document.querySelector('meta[name="viewport"]');
-  //   const hasMobileViewport =
-  //     viewport && viewport.content.includes("width=device-width");
-
-  //   // Check actual screen width (more reliable than window.innerWidth in simulators)
-  //   const screenWidth = window.screen.width || window.innerWidth;
-  //   const isSmallScreen = screenWidth <= 768;
-
-  //   return isMobileUA || hasMobileViewport || isSmallScreen;
-  // };
-
-  // const isMobileDevice = isMobile();
-  // const widgetSize = isMobileDevice ? "400px" : "100px";
-
   // === CONTAINER LINK ===
   const link = document.createElement("a");
   link.href = linkUrl;
@@ -41,8 +16,8 @@ function createWidget(imageUrl, path) {
     position: "fixed",
     bottom: "20px",
     right: "20px",
-    width: "200px",
-    height: "200px",
+    width: "150px",
+    height: "150px",
     zIndex: "9999",
     display: "flex",
     alignItems: "center",
@@ -118,7 +93,7 @@ function createWidget(imageUrl, path) {
       const newBottom = Math.max(
         20,
         Math.min(
-          window.innerHeight - parseInt(widgetSize) - 20,
+          window.innerHeight - parseInt("150px") - 20,
           startBottom + deltaY
         )
       );
@@ -154,20 +129,6 @@ function createWidget(imageUrl, path) {
       hasMoved = false;
     }
   }
-
-  // // === RESPONSIVE RESIZE HANDLER ===
-  // function handleResize() {
-  //   const newIsMobile = isMobile();
-  //   const newSize = newIsMobile ? "400px" : "100px";
-
-  //   if (newIsMobile !== isMobileDevice) {
-  //     link.style.width = newSize;
-  //     link.style.height = newSize;
-  //   }
-  // }
-
-  // // Listen for window resize events
-  // window.addEventListener("resize", handleResize);
 }
 
 // Auto-execute when script loads, reading attributes from script tag
