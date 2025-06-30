@@ -7,6 +7,8 @@ function createWidget(imageUrl, path) {
     imageUrl ||
     "https://patientpartner-images2.s3.us-west-1.amazonaws.com/website/widget/widget.png";
 
+  console.log("window.innerWidth:", window.innerWidth);
+  console.log("window.innerHeight:", window.innerHeight);
   // === CONTAINER LINK ===
   const link = document.createElement("a");
   link.href = linkUrl;
