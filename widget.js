@@ -30,7 +30,7 @@ function createWidget(imageUrl, path) {
   };
 
   const isMobileDevice = isMobile();
-  const widgetSize = isMobileDevice ? "400px" : "200px";
+  const widgetSize = isMobileDevice ? "400px" : "100px";
 
   // === CONTAINER LINK ===
   const link = document.createElement("a");
@@ -41,8 +41,8 @@ function createWidget(imageUrl, path) {
     position: "fixed",
     bottom: "20px",
     right: "20px",
-    width: widgetSize,
-    height: widgetSize,
+    width: "200px",
+    height: "200px",
     zIndex: "9999",
     display: "flex",
     alignItems: "center",
@@ -155,19 +155,19 @@ function createWidget(imageUrl, path) {
     }
   }
 
-  // === RESPONSIVE RESIZE HANDLER ===
-  function handleResize() {
-    const newIsMobile = isMobile();
-    const newSize = newIsMobile ? "400px" : "200px";
+  // // === RESPONSIVE RESIZE HANDLER ===
+  // function handleResize() {
+  //   const newIsMobile = isMobile();
+  //   const newSize = newIsMobile ? "400px" : "100px";
 
-    if (newIsMobile !== isMobileDevice) {
-      link.style.width = newSize;
-      link.style.height = newSize;
-    }
-  }
+  //   if (newIsMobile !== isMobileDevice) {
+  //     link.style.width = newSize;
+  //     link.style.height = newSize;
+  //   }
+  // }
 
-  // Listen for window resize events
-  window.addEventListener("resize", handleResize);
+  // // Listen for window resize events
+  // window.addEventListener("resize", handleResize);
 }
 
 // Auto-execute when script loads, reading attributes from script tag
