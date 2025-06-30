@@ -5,7 +5,7 @@ function createWidget(imageUrl, path) {
   const linkUrl = path && path.trim() ? `${baseUrl}${path}` : baseUrl;
   const imgSrc =
     imageUrl ||
-    "https://patientpartner-images2.s3.us-west-1.amazonaws.com/website/widget/widget.png";
+    "https://patientpartner-images2.s3.us-west-1.amazonaws.com/website/widget/chat-widget.png";
 
   const widgetSize = window.innerWidth < 600 ? "125px" : "200px";
 
