@@ -9,28 +9,28 @@ function createWidget(imageUrl, path) {
 
   // === RESPONSIVE SIZING ===
   // More reliable mobile detection that works with device simulators
-  const isMobile = () => {
-    // Check user agent for mobile devices
-    const userAgent = navigator.userAgent.toLowerCase();
-    const isMobileUA =
-      /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
-        userAgent
-      );
+  // const isMobile = () => {
+  //   // Check user agent for mobile devices
+  //   const userAgent = navigator.userAgent.toLowerCase();
+  //   const isMobileUA =
+  //     /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+  //       userAgent
+  //     );
 
-    // Check if viewport is set for mobile (common in responsive sites)
-    const viewport = document.querySelector('meta[name="viewport"]');
-    const hasMobileViewport =
-      viewport && viewport.content.includes("width=device-width");
+  //   // Check if viewport is set for mobile (common in responsive sites)
+  //   const viewport = document.querySelector('meta[name="viewport"]');
+  //   const hasMobileViewport =
+  //     viewport && viewport.content.includes("width=device-width");
 
-    // Check actual screen width (more reliable than window.innerWidth in simulators)
-    const screenWidth = window.screen.width || window.innerWidth;
-    const isSmallScreen = screenWidth <= 768;
+  //   // Check actual screen width (more reliable than window.innerWidth in simulators)
+  //   const screenWidth = window.screen.width || window.innerWidth;
+  //   const isSmallScreen = screenWidth <= 768;
 
-    return isMobileUA || hasMobileViewport || isSmallScreen;
-  };
+  //   return isMobileUA || hasMobileViewport || isSmallScreen;
+  // };
 
-  const isMobileDevice = isMobile();
-  const widgetSize = isMobileDevice ? "400px" : "100px";
+  // const isMobileDevice = isMobile();
+  // const widgetSize = isMobileDevice ? "400px" : "100px";
 
   // === CONTAINER LINK ===
   const link = document.createElement("a");
