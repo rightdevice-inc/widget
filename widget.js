@@ -7,8 +7,8 @@ function createWidget(imageUrl, path) {
     imageUrl ||
     "https://patientpartner-images2.s3.us-west-1.amazonaws.com/website/widget/widget.png";
 
-  console.log("window.innerWidth:", window.innerWidth);
-  console.log("window.innerHeight:", window.innerHeight);
+  const widgetSize = window.innerWidth < 600 ? "125px" : "200px";
+
   // === CONTAINER LINK ===
   const link = document.createElement("a");
   link.href = linkUrl;
@@ -18,8 +18,8 @@ function createWidget(imageUrl, path) {
     position: "fixed",
     bottom: "20px",
     right: "20px",
-    width: "150px",
-    height: "150px",
+    width: widgetSize,
+    height: widgetSize,
     zIndex: "9999",
     display: "flex",
     alignItems: "center",
@@ -131,6 +131,15 @@ function createWidget(imageUrl, path) {
       hasMoved = false;
     }
   }
+
+  function resizeWidget() {
+    const newSize = window.innerWidth < 600 ? "125px" : "200px";
+    link.style.width = newSize;
+    link.style.height = newSize;
+  }
+
+  // Handle window resize to adjust widget size
+  window.addEventListener("resize", resizeWidget);
 }
 
 // Auto-execute when script loads, reading attributes from script tag
