@@ -12,7 +12,7 @@ Easily embed the Patient Partner widget on your site by including the following 
 | `path`     | String | The landing page path for your Patient Partner account. This **must start with a slash**. <br>Example: if your full URL is `https://patient.patientpartner.com/treatments/foobarbaz`, then use `/treatments/foobarbaz`. |
 
 
-## 📦 Out Of The Box Installation
+## 📦 Out Of The Box Installation With Default Image (requires adding path)
 
 Add this snippet just before the closing `</body>` tag on your website:
 
@@ -23,7 +23,7 @@ Add this snippet just before the closing `</body>` tag on your website:
 ></script>
 ```
 
-## 📦 Custom Installation
+## 📦 Custom Installation (requires adding `imageUrl` and `path`)
 
 Add this snippet just before the closing `</body>` tag on your website:
 
