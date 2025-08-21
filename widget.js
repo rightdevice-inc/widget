@@ -1,5 +1,5 @@
 // Main widget function that receives parameters
-function createWidget(imageUrl, path) {
+function createWidget(imageUrl, path, offsetFromBottom) {
   // === CONFIG ===
   const baseUrl = "https://patient.patientpartner.com";
   const linkUrl = path && path.trim() ? `${baseUrl}${path}` : baseUrl;
@@ -8,6 +8,7 @@ function createWidget(imageUrl, path) {
     "https://patientpartner-images2.s3.us-west-1.amazonaws.com/website/widget/chat-widget-updated.png";
 
   const widgetSize = window.innerWidth < 600 ? "125px" : "200px";
+  const bottomOffset = offsetFromBottom || "20px";
 
   // === CONTAINER LINK ===
   const link = document.createElement("a");
@@ -16,7 +17,7 @@ function createWidget(imageUrl, path) {
   link.rel = "noopener noreferrer";
   Object.assign(link.style, {
     position: "fixed",
-    bottom: "20px",
+    bottom: bottomOffset,
     right: "20px",
     width: widgetSize,
     height: widgetSize,
