@@ -139,6 +139,9 @@ function createWidget(imageUrl, path, offsetFromBottom) {
   const scriptTag = document.currentScript;
   const imageUrl = scriptTag.getAttribute("imageUrl");
   const path = scriptTag.getAttribute("path");
+  const offsetFromBottom =
+    scriptTag.getAttribute("offsetFromBottom") ||
+    scriptTag.getAttribute("offsetfrombottom");
 
-  createWidget(imageUrl, path);
+  createWidget(imageUrl, path, offsetFromBottom);
 })();
