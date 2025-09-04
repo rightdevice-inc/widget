@@ -2,7 +2,12 @@
 function createWidget(imageUrl, path, offsetFromBottom) {
   // === CONFIG ===
   const baseUrl = "https://patient.patientpartner.com";
-  const linkUrl = path && path.trim() ? `${baseUrl}${path}` : baseUrl;
+  const utmParams =
+    "?utm_source=clientsite&utm_medium=stickybutton&utm_campaign=2025";
+  const linkUrl =
+    path && path.trim()
+      ? `${baseUrl}${path}${utmParams}`
+      : `${baseUrl}${utmParams}`;
   const imgSrc =
     imageUrl ||
     "https://patientpartner-images2.s3.us-west-1.amazonaws.com/website/widget/chat-widget-updated.png";
