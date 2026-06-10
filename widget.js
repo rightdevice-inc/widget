@@ -1,9 +1,10 @@
 // Main widget function that receives parameters
-function createWidget(imageUrl, path, offsetFromBottom) {
+function createWidget(imageUrl, path, useUtmParams = true, offsetFromBottom) {
   // === CONFIG ===
-  const baseUrl = "https://patient.patientpartner.com";
-  const utmParams =
-    "?utm_source=clientsite&utm_medium=stickybutton&utm_campaign=2025";
+  const baseUrl = "https://patientpartner.com";
+  const utmParams = useUtmParams
+    ? "?utm_source=clientsite&utm_medium=stickybutton&utm_campaign=2026"
+    : "";
   const linkUrl =
     path && path.trim()
       ? `${baseUrl}${path}${utmParams}`
@@ -102,8 +103,8 @@ function createWidget(imageUrl, path, offsetFromBottom) {
         20,
         Math.min(
           window.innerHeight - parseInt("150px") - 20,
-          startBottom + deltaY
-        )
+          startBottom + deltaY,
+        ),
       );
 
       link.style.bottom = newBottom + "px";
@@ -144,9 +145,10 @@ function createWidget(imageUrl, path, offsetFromBottom) {
   const scriptTag = document.currentScript;
   const imageUrl = scriptTag.getAttribute("imageUrl");
   const path = scriptTag.getAttribute("path");
+  const useUtmParams = scriptTag.getAttribute("useUtmParams") !== "false";
   const offsetFromBottom =
     scriptTag.getAttribute("offsetFromBottom") ||
     scriptTag.getAttribute("offsetfrombottom");
 
-  createWidget(imageUrl, path, offsetFromBottom);
+  createWidget(imageUrl, path, useUtmParams, offsetFromBottom);
 })();
